@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 Jun 2018 pada 23.38
+-- Generation Time: 04 Jul 2018 pada 00.34
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -152,11 +152,25 @@ INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`, `jurusan`, `
 
 CREATE TABLE `pendaftaran` (
   `idPendaftaran` int(11) NOT NULL,
-  `divisi` enum('Software','Mekanik','Elektrik') NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `nohp` varchar(12) NOT NULL,
-  `idLogin` int(200) NOT NULL
+  `nama` varchar(100) NOT NULL,
+  `nim` varchar(15) NOT NULL,
+  `tempatLahir` varchar(50) NOT NULL,
+  `tanggalLahir` varchar(50) NOT NULL,
+  `jenisKelamin` enum('Laki-laki','Perempuan','','') NOT NULL,
+  `divisi` enum('Mekanik','Software','Elektrik','') NOT NULL,
+  `jurusan` enum('Teknologi Informasi','Teknik Elektro','','') NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `prestasi` varchar(300) NOT NULL,
+  `noHp` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pendaftaran`
+--
+
+INSERT INTO `pendaftaran` (`idPendaftaran`, `nama`, `nim`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `divisi`, `jurusan`, `alamat`, `prestasi`, `noHp`) VALUES
+(7, '', '', '', '', '', '', '', '', '', ''),
+(9, 'DWI AYU NING KINANTI', '1631710103', 'MALANG', '09-01-1997', '', 'Software', 'Teknologi Informasi', 'MALANG', '-', '081216666126');
 
 -- --------------------------------------------------------
 
@@ -218,8 +232,7 @@ ALTER TABLE `login`
 -- Indexes for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  ADD PRIMARY KEY (`idPendaftaran`),
-  ADD KEY `idLogin` (`idLogin`);
+  ADD PRIMARY KEY (`idPendaftaran`);
 
 --
 -- Indexes for table `prestasi`
@@ -266,7 +279,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `prestasi`
 --
@@ -282,12 +295,6 @@ ALTER TABLE `prestasi`
 ALTER TABLE `dataangkatan`
   ADD CONSTRAINT `dataangkatan_ibfk_1` FOREIGN KEY (`idAngkatan`) REFERENCES `angkatan` (`idAngkatan`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `dataangkatan_ibfk_2` FOREIGN KEY (`idDivisi`) REFERENCES `divisi` (`idDivisi`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `pendaftaran`
---
-ALTER TABLE `pendaftaran`
-  ADD CONSTRAINT `pendaftaran_ibfk_1` FOREIGN KEY (`idLogin`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `prestasi`
