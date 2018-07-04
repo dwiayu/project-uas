@@ -47,7 +47,7 @@
   <div id="kiri">
   <legend>Breaking News</legend>
   <div>
-      <font face="calibri">Jumlah Pendfatar: </font>
+      <font face="calibri">Jumlah Pendaftar: </font>
      
   </div>
 </div>
