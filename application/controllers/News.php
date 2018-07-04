@@ -35,6 +35,5 @@ class News extends CI_Controller {
 		$data['Hitung'] = $this->Hitung_model->tampilHitung();
 		$this->load->view('news',$data);
 	}
-	
 }
 ?>
