@@ -39,6 +39,10 @@ public function __construct()
         $tampil['DataAngkatan']=$this->Admin_model->getTampilDataAngkatan($id);
         $this->load->view('dataAngkatan',$tampil);
     }
+    public function tampilDaftarr()
+    { 
+        $this->load->view('hasil_pendaftarann');
+    }
     public function createBerita()
     {
         $this->load->model('Admin_model');
