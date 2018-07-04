@@ -72,6 +72,13 @@
     <td> : </td>
     <td colspan="7"><textarea name="prestasi" cols="41" rows="7"></textarea></td>
 </tr>
+<tr>
+
+      <td><label for="">Foto</label></td>
+        <td>:</td>
+     <td> <input type="file" name="userfile" size="20"></td>
+
+</tr>
 
 <tr>
     <td colspan="9" align="right"><button type="submit" class="btn btn-primary">Submit</button></td>

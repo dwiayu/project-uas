@@ -34,13 +34,22 @@ class Pendaftaran extends CI_Controller {
         $this->form_validation->set_rules('alamat', 'tempat', 'trim|required');
         if($this->form_validation->run()==FALSE){
             $this->load->view('pendaftaran_view');
-        }else{
+		}else{
+			$config['upload_path']  = './assets/uploads/';
+            $config['allowed_types']    ='gif|jpg|png';
+            $config['max_sizes']    = 1000000000;
+            $config['max_width']    =10240;
+			$config['max_height']   =7860;
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('userfile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('pendaftaran_view',$error);
+            }else{
             $this->Pendaftaran_model->inputPendaftaran();
             $this->load->view('sukses_daftar');
         }
-    }
-    
-    
-    
+	}
+	}
 }
 ?>
