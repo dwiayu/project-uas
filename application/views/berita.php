@@ -16,11 +16,12 @@
     <ul class="nav navbar-nav">
     <li><a href="<?php echo base_url('index.php/portal') ?>">Home</a></li>
     <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilDaftarr') ?>">Hasil Pendaftaran</a></li>
     <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
 </nav>
 <div class="container">
- <a href="<?php echo base_url('index.php/Admin/createBerita')?>"  class="btn btn-info">Tambah</a>
+ <a href="<?php echo base_url('index.php/admin/createBerita')?>"  class="btn btn-info">Tambah</a>
 
 </div>
 <div class="container">
