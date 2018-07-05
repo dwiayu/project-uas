@@ -43,6 +43,13 @@ public function __construct()
     { 
         $this->load->view('hasil_pendaftarann');
     }
+    public function getAllDaftar()
+    {
+        $this->load->model('Admin_model');
+        $result = $this->Admin_model->getAllDaftar(); 
+        header("Content-Type: application/json");
+        echo json_encode($result);
+    }
     public function createBerita()
     {
         $this->load->model('Admin_model');
