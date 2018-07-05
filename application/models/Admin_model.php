@@ -44,6 +44,13 @@ class Admin_model extends CI_Model{
     $query=$this->db->get('angkatan');
     return $query->result();
   } 
+  public function getAllDaftar()
+  {
+      $query = $this->db->get('pendaftaran');
+      if($query->num_rows()>0){
+          return $query->result();
+      }
+  }
   public function updateById($id){
     $data = array('judulBerita'=>$this->input->post('judul'),);
     $data += array('isi' => $this->input->post('isi'));
