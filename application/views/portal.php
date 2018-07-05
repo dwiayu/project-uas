@@ -20,7 +20,7 @@
       <li><a href="<?php echo site_url()?>/news">News</a></li>
       <li><a href="<?php echo site_url()?>/divisi">Divisi</a></li>
       <li><a href="<?php echo site_url()?>/prestasi">Prestasi</a></li>
-      <li><a href="<?php echo site_url()?>/angkatan">Angkatan</a></li>
+      <li><a href="<?php echo site_url()?>/angkatan_user">Angkatan</a></li>
       <li><a href="<?php echo site_url()?>/admin">Admin</a></li>
       <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
       
