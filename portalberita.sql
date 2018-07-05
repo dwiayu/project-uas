@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Jul 2018 pada 00.34
+-- Generation Time: 05 Jul 2018 pada 03.06
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -81,7 +81,8 @@ CREATE TABLE `dataangkatan` (
 INSERT INTO `dataangkatan` (`idDataAngkatan`, `idAngkatan`, `nama`, `idDivisi`) VALUES
 (2, 1, 'Agustinus', 1),
 (3, 6, 'Dwi Ayu Ning Kinanti', 4),
-(5, 1, 'Anan', 4);
+(5, 1, 'Anan', 4),
+(6, 1, 'Indri Mukti', 3);
 
 -- --------------------------------------------------------
 
@@ -161,16 +162,18 @@ CREATE TABLE `pendaftaran` (
   `jurusan` enum('Teknologi Informasi','Teknik Elektro','','') NOT NULL,
   `alamat` varchar(200) NOT NULL,
   `prestasi` varchar(300) NOT NULL,
-  `noHp` varchar(12) NOT NULL
+  `noHp` varchar(12) NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`idPendaftaran`, `nama`, `nim`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `divisi`, `jurusan`, `alamat`, `prestasi`, `noHp`) VALUES
-(7, '', '', '', '', '', '', '', '', '', ''),
-(9, 'DWI AYU NING KINANTI', '1631710103', 'MALANG', '09-01-1997', '', 'Software', 'Teknologi Informasi', 'MALANG', '-', '081216666126');
+INSERT INTO `pendaftaran` (`idPendaftaran`, `nama`, `nim`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `divisi`, `jurusan`, `alamat`, `prestasi`, `noHp`, `foto`) VALUES
+(7, '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'DWI AYU NING KINANTI', '1631710103', 'MALANG', '09-01-1997', '', 'Software', 'Teknologi Informasi', 'MALANG', '-', '081216666126', ''),
+(10, 'Muhammad Hayckel', '1631710104', 'MALANG', '11-07-2018', 'Laki-laki', 'Mekanik', 'Teknik Elektro', 'MALANG', '-', '082234220432', 'HAYCKEL_(foto)1.jpg');
 
 -- --------------------------------------------------------
 
@@ -259,7 +262,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `dataangkatan`
 --
 ALTER TABLE `dataangkatan`
-  MODIFY `idDataAngkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idDataAngkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `divisi`
 --
@@ -279,7 +282,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `prestasi`
 --
