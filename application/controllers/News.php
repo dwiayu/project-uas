@@ -35,5 +35,10 @@ class News extends CI_Controller {
 		$data['Hitung'] = $this->Hitung_model->tampilHitung();
 		$this->load->view('news',$data);
 	}
+	public function createPdf()
+	{
+		$this->load->library('pdf');
+		$this->pdf->load_view('cetak');
+	}
 }
 ?>
