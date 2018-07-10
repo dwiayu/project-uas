@@ -63,6 +63,13 @@ class Admin_model extends CI_Model{
     $this->db->where('idAngkatan',$id);
     $this->db->update('angkatan',$data);
   }
+
+public function updateDivisiId($id){
+    $data= array('namaDivisi'=>$this->input->post('nama'));
+    $this->db->where('idDivisi',$id);
+    $this->db->update('divisi',$data);
+  }
+
   public function getdataAngkatan($id)
 	{
     $query = $this->db->query("SELECT ang.idAngkatan as id, dv.idDivisi as id, nama as nm, 
@@ -78,6 +85,10 @@ class Admin_model extends CI_Model{
   }
   public function getTampilAngkatan(){
     $query= $this->db->query("select * from angkatan");
+    return $query->result_array();
+  }
+  public function getTampilDivisi(){
+    $query= $this->db->query("select * from divisi");
     return $query->result_array();
   }
   public function getTampilDataAngkatan($id){
