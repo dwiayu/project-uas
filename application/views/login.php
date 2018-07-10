@@ -8,16 +8,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body {
-    background-image: url("gear.jpg");
+    background-image: url("<?php echo base_url();?>assets/images/robot1.jpg");
     background-repeat: no-repeat;
-    background-position: bottom right ;
-    background-size: 200px;
-    margin-bottom: 0px;
+    background-position:  bottom left ;
+    background-size: 900px;
+    margin-bottom: 10px;
+    margin-left : 0px;
     background-attachment: fixed;
 }
 </style>
+</style>
 </head>
 <body>
+<div id="body">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -69,6 +72,7 @@ body {
                       <h5>Anda belum punya akun? </h5>
                     <a href="<?php echo base_url('index.php/Daftar/') ?>">Sign Up</a>
                     </div> 
+</div>                    
 </body>
 </html>
 
