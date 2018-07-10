@@ -18,7 +18,7 @@ class Pendaftaran_model extends CI_Model{
         $object +=array('tanggalLahir'=>$tglfix,);
         $object +=array('jurusan'=>$this->input->post('jurusan'),);
         $object +=array('alamat'=>$this->input->post('alamat'),);
-        $oject += array('noHp'=>$this->input->post('noHp'),);
+        $object += array('noHp'=>$this->input->post('noHp'),);
         $object+=array('prestasi'=>$this->input->post('prestasi'));
         $object += array('foto'=>$this->upload->data('file_name'));
         $this->db->insert('pendaftaran',$object);

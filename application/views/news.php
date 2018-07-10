@@ -47,7 +47,10 @@
   <div id="kiri">
   <legend>Breaking News</legend>
   <div>
-      <font face="calibri">Jumlah Pendaftar: </font>
+      <font face="calibri">Jumlah Pendaftar: 
+      <?php  foreach($hitung as $key) :?>
+      <?php echo $key['jumlah'] ?>
+      <?php endforeach?></font>
      
   </div>
 </div>

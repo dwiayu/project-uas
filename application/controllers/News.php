@@ -29,12 +29,10 @@ class News extends CI_Controller {
 	{
 		
 		$data['Berita']=$this->Admin_model->getTampilBerita();
+		$data['hitung']=$this->Hitung_model->tampilHitung();
 		$this->load->view('news',$data);
 	}
-	public function hitung(){
-		$data['Hitung'] = $this->Hitung_model->tampilHitung();
-		$this->load->view('news',$data);
-	}
+	
 	public function createPdf()
 	{
 		$this->load->library('pdf');
