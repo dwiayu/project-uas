@@ -27,7 +27,7 @@ class News extends CI_Controller {
 	
 	public function index()
 	{
-		
+		$this->load->model('Hitung_model');
 		$data['Berita']=$this->Admin_model->getTampilBerita();
 		$data['hitung']=$this->Hitung_model->tampilHitung();
 		$this->load->view('news',$data);
