@@ -14,7 +14,7 @@
       <a class="navbar-brand" href="#">DwiAyu</a>
   </div>
     <ul class="nav navbar-nav">
-    <li><a href="<?php echo base_url('index.php/portal') ?>">Home</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Home</a></li>
     <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
     <li><a href="<?php echo base_url('index.php/admin/tampilDaftarr') ?>">Hasil Pendaftaran</a></li>
     <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
@@ -47,6 +47,8 @@
             <?php $no++; endforeach ?>
     </tbody>
   </table>
+  
+
 </div>
 </body>
 </html>

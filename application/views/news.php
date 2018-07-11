@@ -30,7 +30,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">EEPROM</a>
+      <a class="navbar-brand" href="#">DwiAyu</a>
     </div>
     <ul class="nav navbar-nav">
     <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
@@ -47,10 +47,11 @@
   <div id="kiri">
   <legend>Breaking News</legend>
   <div>
-      <font face="calibri">Jumlah Pendaftar: 
+      <font face="calibri">Jumlah Pendfatar:
       <?php  foreach($hitung as $key) :?>
       <?php echo $key['jumlah'] ?>
-      <?php endforeach?></font>
+      <?php endforeach?> </font>
+      
      
   </div>
 </div>
@@ -69,6 +70,21 @@
 <a href="<?php echo base_url('index.php/pendaftaran/')?>"  class="btn btn-info">Daftar</a>
 <a href="<?php echo base_url('index.php/news/createPdf')?>"  class="btn btn-success">Unduh Form</a>
 <?php $no++; endforeach ?>
+<br><br>
+</div>
+<div id="kanan">
+<div class="w3-container w3-teal" align="center">
+<?php $no=1; foreach ($Berita2 as $key) : ?>
+ <h3> <?php echo $key['judulBerita'] ?></h3>
+</div> 
+</div>
+<div class="w3-container" align="center"> 
+<font face="calibri" ><?php echo $key['isi'] ?></font>
+</div>
+<br>
+<div align="center">
+<?php $no++; endforeach ?>
+</div>
 </div>
 </body>
 </html>

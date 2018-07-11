@@ -25,7 +25,7 @@ public function __construct()
 
     public function index()
     {
-        $this->load->model('Admin_model');
+        
         $data['Berita']=$this->Admin_model->getTampilBerita();
         $this->load->view('berita',$data);
     }
@@ -60,7 +60,7 @@ public function __construct()
         }else{
             
           $this->Admin_model->createBerita();
-          $this->load->view('sukses_input');
+          $this->load->view('sukses_berita');
       }
 
     }
@@ -145,7 +145,7 @@ public function __construct()
     {
         $this->load->model('Admin_model');
         $this->Admin_model->delete($id);
-        redirect('Admin');
+        redirect('admin');
     }
     public function hapusAngkatan($id){
         $this->load->model('Admin_model');

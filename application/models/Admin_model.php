@@ -51,6 +51,15 @@ class Admin_model extends CI_Model{
           return $query->result();
       }
   }
+  public function getTampilNews(){
+    $query = $this->db->query("select * from berita where idBerita=1");
+    return $query->result_array();
+  }
+  public function getAllBerita()
+  {
+    $query =$this->db->query("SELECT * from berita where idBerita != 1");
+    return $query->result_array();
+  }
   public function updateById($id){
     $data = array('judulBerita'=>$this->input->post('judul'),);
     $data += array('isi' => $this->input->post('isi'));
