@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Jul 2018 pada 03.06
+-- Generation Time: 13 Jul 2018 pada 13.02
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -40,7 +40,8 @@ INSERT INTO `angkatan` (`idAngkatan`, `angkatan`, `tahunJabatan`) VALUES
 (1, 'Angkatan 1', '2011'),
 (2, 'Angkatan 2', '2012'),
 (5, 'Angkatan 3', '2013'),
-(6, 'Angkatan 8', '2018');
+(6, 'Angkatan 8', '2018'),
+(7, 'Angkatan 5', '2016');
 
 -- --------------------------------------------------------
 
@@ -51,15 +52,17 @@ INSERT INTO `angkatan` (`idAngkatan`, `angkatan`, `tahunJabatan`) VALUES
 CREATE TABLE `berita` (
   `idBerita` int(11) NOT NULL,
   `judulBerita` varchar(255) NOT NULL,
-  `isi` varchar(1000) NOT NULL
+  `isi` varchar(1000) NOT NULL,
+  `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `berita`
 --
 
-INSERT INTO `berita` (`idBerita`, `judulBerita`, `isi`) VALUES
-(1, 'Pendaftaran Anggota Baru Komunitas EEPROM', 'Syarat : Mahasiswa aktif POLINEMA, Jurusan Teknik Elektro dan Teknologi Informasi, Bersedia Mengikuti Ujian Akademik dan Non-Akademik');
+INSERT INTO `berita` (`idBerita`, `judulBerita`, `isi`, `file`) VALUES
+(1, 'Pendaftaran Anggota Baru Komunitas EEPROM 2018/2019', 'Syarat : Mahasiswa aktif POLINEMAA, Jurusan Teknik Elektro dan Teknologi Informasi, Bersedia Mengikuti Ujian Akademik dan Non-Akademik', ''),
+(7, 'Even Tahunan Komunitas EEPROM', 'Lomba membuat aplikasi berbasis android dengan Tema Smart Vegetables Farming. Lomba ini diadakan rutin setap tahunnya oleh komunitas kami. dimana dalam lomba ini ada pula persyaratan yang diperlukan. 1. Mahasiswa aktif D4/S1 2.', '');
 
 -- --------------------------------------------------------
 
@@ -163,17 +166,16 @@ CREATE TABLE `pendaftaran` (
   `alamat` varchar(200) NOT NULL,
   `prestasi` varchar(300) NOT NULL,
   `noHp` varchar(12) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `foto` varchar(255) NOT NULL,
+  `keterangan` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`idPendaftaran`, `nama`, `nim`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `divisi`, `jurusan`, `alamat`, `prestasi`, `noHp`, `foto`) VALUES
-(7, '', '', '', '', '', '', '', '', '', '', ''),
-(9, 'DWI AYU NING KINANTI', '1631710103', 'MALANG', '09-01-1997', '', 'Software', 'Teknologi Informasi', 'MALANG', '-', '081216666126', ''),
-(10, 'Muhammad Hayckel', '1631710104', 'MALANG', '11-07-2018', 'Laki-laki', 'Mekanik', 'Teknik Elektro', 'MALANG', '-', '082234220432', 'HAYCKEL_(foto)1.jpg');
+INSERT INTO `pendaftaran` (`idPendaftaran`, `nama`, `nim`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `divisi`, `jurusan`, `alamat`, `prestasi`, `noHp`, `foto`, `keterangan`) VALUES
+(10, 'Muhammad Hayckell', '1631710104', 'MALANG', '11-07-2018', 'Laki-laki', 'Mekanik', 'Teknik Elektro', 'MALANG', '-', '082234220432', 'HAYCKEL_(foto)1.jpg', 'terima');
 
 -- --------------------------------------------------------
 
@@ -252,12 +254,12 @@ ALTER TABLE `prestasi`
 -- AUTO_INCREMENT for table `angkatan`
 --
 ALTER TABLE `angkatan`
-  MODIFY `idAngkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idAngkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `idBerita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idBerita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `dataangkatan`
 --
@@ -282,7 +284,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `prestasi`
 --
