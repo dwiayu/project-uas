@@ -14,14 +14,15 @@
       <a class="navbar-brand" href="#">DwiAyu</a>
   </div>
     <ul class="nav navbar-nav">
+    <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Berita</a></li>
     <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
-    <li><a href="<?php echo base_url('index.php/admin/tampilDataAngkatan') ?>">Data</a></li>
-    <li><a href="<?php echo base_url('index.php/admin/createDivisi')?>">Divisi</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/dataTable') ?>">Hasil Pendaftaran</a></li>
     <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
 </nav>
 <div class="container">
- <a href="<?php echo base_url('index.php/Admin/tambahAngkatan')?>"  class="btn btn-info">Tambah</a>
+ <a href="<?php echo base_url('index.php/admin/tambahAngkatan')?>"  class="btn btn-info">Tambah</a>
 
 </div>
 <div class="container">

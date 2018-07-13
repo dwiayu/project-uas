@@ -9,6 +9,19 @@
   
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DwiAyu</a>
+  </div>
+    <ul class="nav navbar-nav">
+    <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Berita</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/dataTable') ?>">Hasil Pendaftaran</a></li>
+    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
+    </ul>
+</nav>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 <?php echo form_open_multipart('Admin/updateDaftar');?>
     <h1>Daftar List Peserta</h1>

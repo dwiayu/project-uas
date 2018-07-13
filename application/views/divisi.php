@@ -17,12 +17,13 @@
       <a class="navbar-brand" href="#">EEPROM</a>
     </div>
     <ul class="nav navbar-nav">
-    <li><a href="<?php echo site_url()?>/Portal">Home</a></li>
-    <li><a href="<?php echo site_url()?>/News">News</a></li>
-    <li><a href="<?php echo base_url('index.php/admin/tampilDivisi') ?>">Divisi</a></li>
-    <li><a href="<?php echo site_url()?>/Prestasi">Prestasi</a></li>
-    <li><a href="<?php echo site_url()?>/Angkatan">Angkatan</a></li>
-    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a></li>
+    <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
+    <li><a href="<?php echo site_url()?>/news">News</a></li>
+    <li><a href="<?php echo site_url()?>/divisi">Divisi</a></li>
+    <li><a href="<?php echo site_url()?>/prestasi">Prestasi</a></li>
+    <li><a href="<?php echo site_url()?>/angkatan_user">Angkatan</a></li>
+    <li><a href="<?php echo site_url()?>/admin">Admin</a></li>
+    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
     
   </div>

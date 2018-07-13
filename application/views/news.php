@@ -37,9 +37,9 @@
     <li><a href="<?php echo site_url()?>/news">News</a></li>
     <li><a href="<?php echo site_url()?>/divisi">Divisi</a></li>
     <li><a href="<?php echo site_url()?>/prestasi">Prestasi</a></li>
-    <li><a href="<?php echo site_url()?>/angkatan">Angkatan</a></li>
+    <li><a href="<?php echo site_url()?>/angkatan_user">Angkatan</a></li>
     <li><a href="<?php echo site_url()?>/admin">Admin</a></li>
-    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
+    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>>
     
   </ul>
     
@@ -51,8 +51,9 @@
       <?php  foreach($hitung as $key) :?>
       <?php echo $key['jumlah'] ?>
       <?php endforeach?> </font>
-      
-     
+  </div>
+  <div>
+    <font face="calibri">Hasil Pendaftaran : <a href="<?php echo base_url('index.php/login/logout') ?>">Lihat</a></font>
   </div>
 </div>
 </nav>
@@ -77,7 +78,7 @@
 <?php $no=1; foreach ($Berita2 as $key) : ?>
  <h3> <?php echo $key['judulBerita'] ?></h3>
 </div> 
-</div>
+
 <div class="w3-container" align="center"> 
 <font face="calibri" ><?php echo $key['isi'] ?></font>
 </div>
