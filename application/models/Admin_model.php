@@ -60,6 +60,68 @@ class Admin_model extends CI_Model{
     $query =$this->db->query("SELECT * from berita where idBerita != 1");
     return $query->result_array();
   }
+  public function getTampilDaftar()
+  {
+    $query =$this->db->query("SELECT * FROM pendaftaran");
+    return $query->result();
+  }
+  public function tampilDaftarid($id)
+  {
+    $query= $this->db->query("SELECT * FROM pendaftaran WHERE idPendaftaran=$id");
+    return $query->result();
+  }
+  public function simpanAccept($id){
+    $query=$this->db->query("update pendaftaran set keterangan='terima' WHERE idPendaftaran=$id");
+    // return $query->result();
+  }
+  public function acc(){
+    $data=$this->input->post();
+    $this->db->insert('hasilseleksi',$data);
+  }
+  public function updateDaftar($id)
+  {
+    
+    // $tanggal=$this->input->post('tanggal');
+    // $tglraw=explode('-',$tanggal);
+    // $tglfix=$tglraw[2].'-'.$tglraw[1].'-'.$tglraw[0];
+    
+    if($this->upload->data('file_name')==""){
+      $data= array('nama'=>$this->input->post('nama'),);
+      $data += array('nim'=>$this->input->post('nim'),);
+      $data += array('tempatLahir'=>$this->input->post('tempat'),);
+      $data += array('tanggalLahir'=>$this->input->post('tgl'),);
+      $data += array('jenisKelamin'=>$this->input->post('kelamin'),);
+      $data += array('divisi'=>$this->input->post('divisi'),);
+      $data += array('jurusan'=>$this->input->post('jurusan'),);
+      $data += array('alamat'=>$this->input->post('alamat'),);
+      $data += array('prestasi'=>$this->input->post('prestasi'),);
+      $data += array('noHp'=>$this->input->post('noHp'));
+      // $data += array('foto'=>$this->input->data('file_name'),);
+      $this->db->where('idPendaftaran',$id);
+      $this->db->update('pendaftaran',$data);
+    }else{
+      $data= array('nama'=>$this->input->post('nama'),);
+      $data += array('nim'=>$this->input->post('nim'),);
+      $data += array('tempatLahir'=>$this->input->post('tempat'),);
+      $data += array('tanggalLahir'=>$this->input->post('tanggal'),);
+      $data += array('jenisKelamin'=>$this->input->post('kelamin'),);
+      $data += array('divisi'=>$this->input->post('divisi'),);
+      $data += array('jurusan'=>$this->input->post('jurusan'),);
+      $data += array('alamat'=>$this->input->post('alamat'),);
+      $data += array('prestasi'=>$this->input->post('prestasi'),);
+      $data += array('noHp'=>$this->input->post('noHp'),);
+      $data += array('foto'=>$this->upload->data('file_name'),);
+      
+      $this->db->where('idPendaftaran',$id);
+      $this->db->update('pendaftaran',$id);
+    }
+  }
+    public function hapusDaftarTable($id)
+    {
+      $this->db->where('idPendaftaran',$id);
+      $this->db->delete('pendaftaran');
+    }
+
   public function updateById($id){
     $data = array('judulBerita'=>$this->input->post('judul'),);
     $data += array('isi' => $this->input->post('isi'));

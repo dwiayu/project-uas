@@ -162,4 +162,63 @@ public function __construct()
         $this->Admin_model->deleteDataAngkatan($id);
         redirect('Admin/tampilAngkatan');
     }
+    public function dataTable()
+    {
+        $this->load->model('Admin_model');
+        $data['pendaftaran_list']=$this->Admin_model->getTampilDaftar();
+        $this->load->view('hasil_daftar_dt',$data);
+    }
+    public function simpanHasil($id)
+    {
+        $this->load->model('Admin_model');
+        $this->Admin_model->simpanAccept($id);
+        echo "<script> alert('Daftar Diterima');
+        window.location.href='../../admin/dataTable'; </script>";
+    }
+    public function hapusDataTable($id)
+    {
+        $this->load->model('Admin_model');
+        $this->Admin_model->hapusDaftarTable($id);
+        redirect('admin/dataTable');
+    }
+    public function updateDaftar($id)
+    {
+        $this->load->model('Admin_model');
+        $this->form_validation->set_rules('nama', 'nama', 'trim|required');
+        $this->form_validation->set_rules('nim', 'nim', 'trim|required');
+        $this->form_validation->set_rules('tempat', 'tempat', 'trim|required');
+        $this->form_validation->set_rules('tgl', 'tgl', 'trim|required');
+        $this->form_validation->set_rules('kelamin', 'kelamin', 'trim|required');
+        $this->form_validation->set_rules('divisi', 'divisi', 'trim|required');
+        $this->form_validation->set_rules('jurusan', 'jurusan', 'trim|required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+        $this->form_validation->set_rules('prestasi', 'prestasi', 'trim|required');
+        $this->form_validation->set_rules('noHp', 'noHp', 'trim|required');
+        // $this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
+        $data['daftar']= $this->Admin_model->tampilDaftarid($id);
+        
+        if($this->form_validation->run()==FALSE){
+            $this->load->view('edit_daftar',$data);
+        }else{
+            $config['upload_path']      ='./assets/uploads/';
+            $config['allowed_types']    ='gif|jpg|png';
+            $config['max_size']         =1000000000;
+            $config['max_width']        =10240;
+            $config['max_height']       =7680;
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('foto')){
+                $this->Admin_model->updateDaftar($id);
+                echo "<script> alert('Daftar anda berhasil dirubah');
+                window.location.href='../../admin/dataTable'; </script>";
+            
+            }else{
+                $this->Admin_model->updateDaftar($id);
+                echo"<script> alert('Daftar berhasil dirubah, dengan gambar');
+                window.location.href='../../admin/dataTable';</script>";
+               
+            }
+        }
+    }
+  
 }
