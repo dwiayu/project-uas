@@ -30,7 +30,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">DwiAyu</a>
+      <a class="navbar-brand" href="#">EEPROM</a>
     </div>
     <ul class="nav navbar-nav">
     <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
@@ -52,7 +52,7 @@
       <?php endforeach?> </font>
   </div>
   <div>
-    <font face="calibri">Hasil Pendaftaran : <a href="<?php echo base_url('index.php/login/logout') ?>">Lihat</a></font>
+    <font face="calibri">Hasil Pendaftaran : <a href="<?php echo base_url('index.php/pendaftaran/lihatHasil') ?>">Lihat</a></font>
   </div>
 </div>
 </nav>
