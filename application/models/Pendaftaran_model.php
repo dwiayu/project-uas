@@ -30,5 +30,11 @@ class Pendaftaran_model extends CI_Model{
         return $query->result_array(); 
         
       }
+
+    public function lihatHasil()
+    {
+    $query =$this->db->query("SELECT * FROM pendaftaran WHERE keterangan='terima'");
+    return $query->result_array();
+    }
 }
 ?>
