@@ -113,7 +113,7 @@ class Admin_model extends CI_Model{
       $data += array('foto'=>$this->upload->data('file_name'),);
       
       $this->db->where('idPendaftaran',$id);
-      $this->db->update('pendaftaran',$id);
+      $this->db->update('pendaftaran',$data);
     }
   }
     public function hapusDaftarTable($id)
