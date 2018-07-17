@@ -53,5 +53,12 @@ class Pendaftaran extends CI_Controller {
         }
 	}
 	}
+
+	 public function lihatHasil()
+    {
+        $this->load->model('Pendaftaran_model');
+        $tampil['hasilDaftar'] = $this->Pendaftaran_model->lihatHasil();
+        $this->load->view('lihatHasil',$tampil);
+    }
 }
 ?>
