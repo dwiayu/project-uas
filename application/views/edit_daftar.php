@@ -16,9 +16,11 @@
       <a class="navbar-brand" href="#">DwiAyu</a>
     </div>
     <ul class="nav navbar-nav">
-    <li class="navbar-brand"><a href="<?php echo base_url('index.php/pegawai/index') ?>">Home</a></li>
-      <li class="navbar-brand"><a href="<?php echo base_url('index.php/pegawai/create') ?>">Tambah Data</a></li>
-
+    <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Berita</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/dataTable') ?>">Hasil Pendaftaran</a></li>
+    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
     
   </div>

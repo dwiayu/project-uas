@@ -49,7 +49,7 @@ class Pendaftaran extends CI_Controller {
                 $this->load->view('pendaftaran_view',$error);
             }else{
             $this->Pendaftaran_model->inputPendaftaran();
-            $this->load->view('sukses_daftar');
+            redirect('news/','refresh');
         }
 	}
 	}
