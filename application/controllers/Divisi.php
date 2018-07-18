@@ -9,5 +9,12 @@ class Divisi extends CI_Controller {
 		$data['Divisi']=$this->Admin_model->getTampilDivisi();
 		$this->load->view('divisi',$data);
 	}
+
+	public function delete($id)
+	{
+		$this->load->model('Admin_model');
+		$this->Admin_model->delete($id);
+		redirect('divisi');
+	}
 	
 }

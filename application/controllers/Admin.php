@@ -89,16 +89,39 @@ public function __construct()
             $this->load->view('sukses_input_data_angkatan');
         }
     }
+
     public function createDivisi(){
         $this->load->model('Admin_model');
-        $this->form_validation->set_rules('nama','nama','trim|required');
+        $this->form_validation->set_rules('divisi','divisi','trim|required');
+        $this->form_validation->set_rules('keterangan','keterangan','trim|required');
         if($this->form_validation->run()==FALSE){
             $this->load->view('input_divisi');
         }else{
+            $config['upload_path']  = './assets/uploads/';
+            $config['allowed_types']    ='gif|jpg|png';
+            $config['max_sizes']    = 1000000000;
+            $config['max_width']    =10240;
+            $config['max_height']   =7860;
+            $this->load->library('upload',$config);
+            if( ! $this->upload->do_upload('userfile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('input_divisi');
+            }
+            else{
             $this->Admin_model->createDivisi();
-            $this->load->view('suksesinputdivisi');
+            $this->load->view('sukses_input_divisi');
         }
     }
+    }
+
+    public function tampilDivisi()
+    {
+         $this->load->model('Admin_model');
+        $data['Divisi']= $this->Admin_model->getTampilDivisi();
+        $this->load->view('divisi',$data);
+    }
+
     public function updateBerita($id)
     {
         $this->load->model('Admin_model');
@@ -124,17 +147,27 @@ public function __construct()
             $this->load->view('edit_angkatan_sukses',$data);
         }
     }
-    public function updateDivisi($id){
+    
+   public function updateDivisi($id){
         $this->load->model('Admin_model');
-        $this->form_validation->set_rules('nama','nama','trim|required');
+        $this->form_validation->set_rules('divisi','divisi','trim|required');
+        $this->form_validation->set_rules('keterangan','keterangan','trim|required');
         $data['Divisi']= $this->Admin_model->getDivisi($id);
         if($this->form_validation->run()==FALSE){
             $this->load->view('edit_divisi_view',$data);
         }else{
+            $config['upload_path']  = './assets/uploads/';
+            $config['allowed_types']    ='gif|jpg|png';
+            $config['max_sizes']    = 1000000000;
+            $config['max_width']    =10240;
+            $config['max_height']   =7860;
+            $this->load->library('upload',$config);
+            
             $this->Admin_model->updateDivisiId($id);
             $this->load->view('edit_divisi_sukses');
         }
     }
+
     public function detailAngkatan($id)
 	{
 		$this->load->model('Admin_model');
