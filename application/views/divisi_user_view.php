@@ -65,6 +65,5 @@
 
           <?php $no++; endforeach ?>
         </div>
-
 </body>
 </html>
