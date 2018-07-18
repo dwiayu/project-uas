@@ -27,6 +27,10 @@
     
   </div>
 </nav>
+<div class="container">
+  <h2><center>Daftar Divisi</center></h2>
+ <a href="<?php echo base_url('index.php/admin/createDivisi')?>"  class="btn btn-info">Tambah</a><br><br>
+ </div>
 
 <table cellpadding="10">
     <div class="table-responsive">
@@ -35,21 +39,25 @@
       <tr class="danger">
         <td><b>No</td></b>
         <td><b>Nama Divisi</td></b>
+        <td><b>Keterangan</td></b>
+        <td><b>Gambar</td></b>
         <td><b>Action</b></td>
         
       </tr>
     </thead>
-    <?php $no=1; foreach ($Divisi as $key){
-    ?>
+    <tr class="warning">
+    <?php $no=1; foreach ($Divisi as $key): ?>
     <tbody>
       <tr>
-        <td><?php echo $no;?></td>
+        <td><?php echo $no ?></td>
         <td><?php echo $key['namaDivisi'] ?></td>
-        <td><a href="<?php echo base_url('index.php/admin/updateDivisi/'.$key['idDivisi']) ?>"  class="btn btn-primary">Update</a></td>
-                  <td><a href="<?php echo base_url('index.php/admin/hapusDivisi/' .$key['idDivisi']) ?>"  class="btn btn-danger">Delete</a></td>
-                  <td><a href="<?php echo base_url('index.php/admin/detailDivisi/' .$key['idDivisi']) ?>"  class="btn btn-success">Detail</a></td>
+        <td><?php echo $key['keterangan'] ?></td>
+        <td><img src="<?php echo base_url('assets/uploads/' .$key['gambar']) ?>" width="80" height="80"></td>
+        <td><a href="<?php echo base_url('index.php/admin/updateDivisi/'.$key['idDivisi']) ?>"  class="btn btn-primary">Update</a>
+                  <a href="<?php echo base_url('index.php/admin/hapusDivisi/' .$key['idDivisi']) ?>"  class="btn btn-danger">Delete</a>
+                  </td>
         
-    <?php $no++;} ?>
+    <?php $no++; endforeach ?>
       </tr>
     </tbody>
     </table>
