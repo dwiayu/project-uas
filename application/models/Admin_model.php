@@ -25,9 +25,12 @@ class Admin_model extends CI_Model{
     $this->db->insert('dataangkatan',$object);
   }
   public function createDivisi(){
-    $data = array('namaDivisi'=>$this->input->post('nama'));
+    $data = array('namaDivisi'=>$this->input->post('divisi'),);
+     $data += array('keterangan'=>$this->input->post('keterangan'),);
+      $data += array('gambar'=>$this->upload->data('file_name'));
     $this->db->insert('divisi',$data);
   }
+  
   public function getBerita($id)
   {
     $this->db->where('idBerita',$id);
