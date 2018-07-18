@@ -30,7 +30,7 @@
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 <div class="table-responsive">
 <h1> Detail Angkatan</h1>
-<a href="<?php echo base_url('index.php/Admin/tambahDataAngkatan')?>"  class="btn btn-info">Tambah</a>
+<a href="<?php echo base_url('index.php/admin/tambahDataAngkatan')?>"  class="btn btn-info">Tambah</a>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -47,7 +47,7 @@
                   <td><?php echo $no ?></td><br>
                   <td><?php echo $key['nm'] ?></td>
                   <td><?php echo $key['nd'] ?></td>
-                  <td><a href="<?php echo base_url('index.php/admin/hapusDataAngkatan/' .$key['id']) ?>"  class="btn btn-danger">Delete</a></td>
+                  <td><a href="<?php echo base_url('index.php/admin/hapusDataAngkatan/' .$key['idA']) ?>"  class="btn btn-danger">Delete</a></td>
                   
 
             </tr>

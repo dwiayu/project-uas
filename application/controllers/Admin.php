@@ -156,15 +156,24 @@ public function __construct()
         if($this->form_validation->run()==FALSE){
             $this->load->view('edit_divisi_view',$data);
         }else{
-            $config['upload_path']  = './assets/uploads/';
+             $config['upload_path']  = './assets/uploads/';
             $config['allowed_types']    ='gif|jpg|png';
             $config['max_sizes']    = 1000000000;
             $config['max_width']    =10240;
             $config['max_height']   =7860;
             $this->load->library('upload',$config);
-            
-            $this->Admin_model->updateDivisiId($id);
+            if( ! $this->upload->do_upload('userfile'))
+            {
+                  $this->Admin_model->updateDivisiId($id);
             $this->load->view('edit_divisi_sukses');
+            }
+            else{
+              $this->Admin_model->updateDivisiId($id);
+            $this->load->view('edit_divisi_sukses');
+        }
+           
+            
+          
         }
     }
 
@@ -184,17 +193,17 @@ public function __construct()
     public function hapusAngkatan($id){
         $this->load->model('Admin_model');
         $this->Admin_model->deleteAngkatan($id);
-        redirect('Admin/tampilAngkatan');
+        redirect('admin/tampilAngkatan');
     }
     public function hapusDivisi($id){
         $this->load->model('Admin_model');
         $this->Admin_model->deleteDivisi($id);
-        redirect('Admin/Divisi');
+        redirect('admin/tampilDivisi');
     }
     public function hapusDataAngkatan($id){
         $this->load->model('Admin_model');
         $this->Admin_model->deleteDataAngkatan($id);
-        redirect('Admin/tampilAngkatan');
+        redirect('admin/tampilAngkatan');
     }
     public function dataTable()
     {

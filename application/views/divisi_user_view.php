@@ -25,11 +25,12 @@
       <a class="navbar-brand" href="#">EEPROM</a>
     </div>
     <ul class="nav navbar-nav">
-    <li><a href="<?php echo site_url()?>/Portal">Home</a></li>
-    <li><a href="<?php echo site_url()?>/News">News</a></li>
-    <li><a href="<?php echo base_url('index.php/admin/Divisi') ?>">Divisi</a></li>
-    <li><a href="<?php echo site_url()?>/Angkatan">Angkatan</a></li>
-    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a></li>
+    <li class="active"><a href="<?php echo site_url()?>/home">Home</a></li>
+      <li><a href="<?php echo site_url()?>/news">News</a></li>
+      <li><a href="<?php echo site_url()?>/divisi_user">Divisi</a></li>
+      <li><a href="<?php echo site_url()?>/angkatan_user">Angkatan</a></li>
+       <li><a href="<?php echo site_url()?>/admin">Admin</a></li>
+      <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a></li>
     </ul>
     </div>
 

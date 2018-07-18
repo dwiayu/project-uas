@@ -1,5 +1,5 @@
 <?php 
       echo "Sukses Simpan Data ";
 
-      echo anchor('Admin/tampilAngkatan','Masukkan Data Lagi');
+      echo anchor('admin/tampilAngkatan','Masukkan Data Lagi');
 ?>

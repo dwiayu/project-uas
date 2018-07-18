@@ -30,7 +30,7 @@ class Admin_model extends CI_Model{
       $data += array('gambar'=>$this->upload->data('file_name'));
     $this->db->insert('divisi',$data);
   }
-  
+
   public function getBerita($id)
   {
     $this->db->where('idBerita',$id);
@@ -84,9 +84,7 @@ class Admin_model extends CI_Model{
   public function updateDaftar($id)
   {
     
-    // $tanggal=$this->input->post('tanggal');
-    // $tglraw=explode('-',$tanggal);
-    // $tglfix=$tglraw[2].'-'.$tglraw[1].'-'.$tglraw[0];
+    
     
     if($this->upload->data('file_name')==""){
       $data= array('nama'=>$this->input->post('nama'),);
@@ -157,7 +155,7 @@ public function updateDivisiId($id){
   public function getdataAngkatan($id)
 	{
     $query = $this->db->query("SELECT ang.idAngkatan as id, dv.idDivisi as id, nama as nm, 
-   namaDivisi as nd
+   namaDivisi as nd, idDataAngkatan as idA
     FROM dataangkatan da INNER JOIN angkatan ang on da.idAngkatan=ang.idAngkatan 
     INNER JOIN divisi dv on dv.idDivisi=da.idDivisi WHERE ang.idAngkatan=$id");
 		return $query->result_array();
