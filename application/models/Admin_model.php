@@ -136,10 +136,20 @@ class Admin_model extends CI_Model{
   }
 
 public function updateDivisiId($id){
-    $data= array('namaDivisi'=>$this->input->post('nama'));
+  if($this->upload->data('file_name')==""){
+    $data= array('namaDivisi'=>$this->input->post('divisi'));
+    $data += array('keterangan'=>$this->input->post('keterangan'));
     $this->db->where('idDivisi',$id);
     $this->db->update('divisi',$data);
   }
+   else{
+    $data= array('namaDivisi'=>$this->input->post('divisi'),);
+    $data += array('keterangan'=>$this->input->post('keterangan'));
+    $data += array('gambar'=>$this->upload->data('file_name'));
+    $this->db->where('idDivisi',$id);
+    $this->db->update('divisi',$data);
+  }
+}
 
   public function getdataAngkatan($id)
 	{
