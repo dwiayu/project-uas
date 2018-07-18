@@ -13,18 +13,22 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">DwiAyu</a>
+      <a class="navbar-brand" href="#">EEPROM</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="<?php echo base_url('index.php/admin/index') ?>">Home</a></li>
-      <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+     <ul class="nav navbar-nav">
+    <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Berita</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilDivisi') ?>">Divisi</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/dataTable') ?>">Hasil Pendaftaran</a></li>
+    <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
     
   </div>
 </nav>
 
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-<?php echo form_open_multipart('Admin/tambahAngkatan');?>
+<?php echo form_open_multipart('admin/tambahAngkatan');?>
     <legend> Tambah Angkatan </legend>
     <?php echo validation_errors(); ?>
     <div class="form-group">

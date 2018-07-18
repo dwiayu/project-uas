@@ -30,7 +30,6 @@
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 <div class="table-responsive">
 <h1><center> Detail Angkatan</center></h1>
-<a href="<?php echo base_url('index.php/Angkatan_user')?>" </a>
   <table class="table table-hover">
     <thead>
       <tr>

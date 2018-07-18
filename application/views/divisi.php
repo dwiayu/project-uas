@@ -18,11 +18,10 @@
     </div>
     <ul class="nav navbar-nav">
     <li class="active"><a href="<?php echo site_url()?>/portal">Home</a></li>
-    <li><a href="<?php echo site_url()?>/news">News</a></li>
-    <li><a href="<?php echo site_url()?>/divisi">Divisi</a></li>
-    <li><a href="<?php echo site_url()?>/prestasi">Prestasi</a></li>
-    <li><a href="<?php echo site_url()?>/angkatan_user">Angkatan</a></li>
-    <li><a href="<?php echo site_url()?>/admin">Admin</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/') ?>">Berita</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilDivisi') ?>">Divisi</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/tampilAngkatan') ?>">Angkatan</a></li>
+    <li><a href="<?php echo base_url('index.php/admin/dataTable') ?>">Hasil Pendaftaran</a></li>
     <li><a href="<?php echo base_url('index.php/login/logout') ?>">Logout</a>
     </ul>
     
