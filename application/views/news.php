@@ -68,7 +68,7 @@
 </div>
 <br>
 <div align="center">
-<a href="<?php echo base_url('index.php/pendaftaran/')?>"  class="btn btn-info">Daftar</a>
+<a href="<?php echo base_url('index.php/pendaftaran/daftar')?>"  class="btn btn-info">Daftar</a>
 <a href="<?php echo base_url('index.php/news/createPdf')?>"  class="btn btn-success">Unduh Form</a>
 <?php $no++; endforeach ?>
 <br><br>

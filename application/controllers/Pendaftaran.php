@@ -11,6 +11,7 @@ class Pendaftaran extends CI_Controller {
 			$session_data=$this->session->userdata("logged_in");
 			$data['username']=$session_data['username'];
 			$data['level']=$session_data['level'];
+			$data['id']=$session_data['id'];
 			$current_controller = $this->router->fetch_class();
 			$this->load->library('acl');
 			if(! $this->acl->is_public($current_controller)){
@@ -24,16 +25,17 @@ class Pendaftaran extends CI_Controller {
 		}
 	}
     
-	public function index(){
+	public function daftar(){
         
         $this->form_validation->set_rules('nama', 'nama', 'trim|required');
         $this->form_validation->set_rules('nim', 'nim', 'trim|required');
         $this->form_validation->set_rules('tempat', 'tempat', 'trim|required');
         $this->form_validation->set_rules('tanggal', 'tanggal', 'trim|required');
         $this->form_validation->set_rules('kelamin', 'kelamin', 'trim|required');
-        $this->form_validation->set_rules('alamat', 'tempat', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'tempat', 'trim|required');
+		$data["nama"]=$this->Pendaftaran_model->getNama();
         if($this->form_validation->run()==FALSE){
-            $this->load->view('pendaftaran_view');
+            $this->load->view('pendaftaran_view',$data);
 		}else{
 			$config['upload_path']  = './assets/uploads/';
             $config['allowed_types']    ='gif|jpg|png';

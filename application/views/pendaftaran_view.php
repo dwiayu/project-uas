@@ -8,13 +8,15 @@
     <legend> Form Pendaftaran</legend>
     <?php echo validation_errors(); ?>
 <form method="post">
+<?php foreach($nama as $key): ?>
 <table border="0">
 
 <tr>
     <td> Nama Mahasiswa </td>
     <td> : </td>
-    <td colspan="7"> <input type="text" class="form-control" id="nama" name="nama" placeholder="Input Field"> </td>
+    <td colspan="7"> <input type="text" readonly class="form-control" id="nama" name="nama" value="<?php echo $key['nama'] ?>"> </td>
 </tr>
+<?php  endforeach?>
 <tr>
     <td> NIM </td>
     <td> : </td>

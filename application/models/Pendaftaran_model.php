@@ -23,5 +23,12 @@ class Pendaftaran_model extends CI_Model{
         $object += array('foto'=>$this->upload->data('file_name'));
         $this->db->insert('pendaftaran',$object);
     }
+    public function getNama(){
+        $session_data=$this->session->userdata("logged_in");
+        $id=$session_data['id'];
+        $query=$this->db->query("select * from login where id=$id");
+        return $query->result_array(); 
+        
+      }
 }
 ?>
